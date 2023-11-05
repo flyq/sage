@@ -23,7 +23,26 @@ N(pi, digits=100)
 print(N(pi, digits=100))
 
 # 分解多项式
-R.<x,y> = QQ[]
-F = factor(x**99 + y**99)
-print(F)
-F.expand()
+R = PolynomialRing(QQ, "x,y")
+x, y = R.gens()
+
+for i in range(100):
+    F = factor(x**i + y**i)
+    # print(F)
+    # expand 展开
+    # print(F.expand())
+
+# what is Partitions?
+# https://en.wikipedia.org/wiki/Partition_(number_theory)
+# 分治，将一个数分解为多个数的和
+# what is cardinality?
+# https://en.wikipedia.org/wiki/Cardinality
+# 求集合的基数，即元素的个数
+# z = Partitions(10**8).cardinality()
+set = Partitions(10)
+for i in set:
+    print(i)
+print(set.cardinality())
+
+set_a = Set([1, 2, 33])
+print(set_a.cardinality())
