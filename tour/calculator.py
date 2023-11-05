@@ -1,26 +1,32 @@
 from sage.all import *
 
-print(3 + 5)  # addition
-print(57.1**100)  # exponentiation
+# 加减乘除乘方等
+print(3 + 5)
+print(57.1**100)
 
+# 矩阵相关
 A = matrix([[1, 2], [3, 4]])
-B = A ** (-1)  # matrix inverse
 # what the meaning of matrix inverse?
 # https://www.mathsisfun.com/algebra/matrix-inverse.html
+B = A ** (-1)  # matrix inverse
 print(B)
 
-# create a symbolic variable
+# 函数相关，创建符号变量
 x = var("x")
-
-# Define a function
-f = x**2 - 3 * x + 2
+# 不定积分
 g = integrate(sqrt(x) * sqrt(1 + x), x)
 print(g)
 
-
-# Find the roots of the function
+# 求解函数
+f = x**2 - 3 * x + 2
 roots = solve(f, x)
+print(roots)
 
-# Print the roots
-for root in roots:
-    print(root.rhs())
+a = var("a")
+S = solve(x**2 + x == a, x)
+print(S)
+
+# 绘图
+# 可惜，这个绘图功能在这里无法使用，
+# 但是本地启动 sage 之后，可以显示图片需要在本地安装sage
+show(plot(sin(x) + sin(1.6 * x), 0, 40))
