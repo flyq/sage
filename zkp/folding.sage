@@ -120,3 +120,109 @@ E_3 = (
 
 T = (E_3 - E_1 - r ^ 4 * E_2) / r
 show(T.expand())
+
+# jellyfish
+print("jellyfish")
+
+q_o = var("q_o")
+pub_input = var("pub_input")
+q_c = var("q_c")
+q_mul0 = var("q_mul0")
+q_mul1 = var("q_mul1")
+q_lc0 = var("q_lc0")
+q_lc1 = var("q_lc1")
+q_lc2 = var("q_lc2")
+q_lc3 = var("q_lc3")
+q_hash0 = var("q_hash0")
+q_hash1 = var("q_hash1")
+q_hash2 = var("q_hash2")
+q_hash3 = var("q_hash3")
+q_ecc = var("q_ecc")
+
+w_01 = var("w_01")
+w_02 = var("w_02")
+w_03 = var("w_03")
+
+w_11 = var("w_11")
+w_12 = var("w_12")
+w_13 = var("w_13")
+
+w_21 = var("w_21")
+w_22 = var("w_22")
+w_23 = var("w_23")
+
+w_31 = var("w_31")
+w_32 = var("w_32")
+w_33 = var("w_33")
+
+w_o1 = var("w_o1")
+w_o2 = var("w_o2")
+w_o3 = var("w_o3")
+
+u_1 = var("u_1")
+u_2 = var("u_2")
+u_3 = var("u_3")
+
+r = var("r")
+
+E_1 = (
+    q_ecc * w_01 * w_11 * w_21 * w_31 * w_o1 + u_1
+    ^ 3 * q_mul0 * w_01 * w_11 + u_1
+    ^ 3 * q_mul1 * w_21 * w_31 + u_1
+    ^ 4 * q_lc0 * w_01 + u_1
+    ^ 4 * q_lc1 * w_11 + u_1
+    ^ 4 * q_lc2 * w_21 + u_1
+    ^ 4 * q_lc3 * w_31 + u_1
+    ^ 4 * q_hash0 * w_01 + u_1
+    ^ 4 * q_hash1 * w_11 + u_1
+    ^ 4 * q_hash2 * w_21 + u_1
+    ^ 4 * q_hash3 * w_31 + u_1
+    ^ 5 * q_c + u_1
+    ^ 5 * pub_input - u_1
+    ^ 4 * q_o * w_o1
+)
+
+E_2 = (
+    q_ecc * w_02 * w_12 * w_22 * w_32 * w_o2 + u_2
+    ^ 3 * q_mul0 * w_02 * w_12 + u_2
+    ^ 3 * q_mul1 * w_22 * w_32 + u_2
+    ^ 4 * q_lc0 * w_02 + u_2
+    ^ 4 * q_lc1 * w_12 + u_2
+    ^ 4 * q_lc2 * w_22 + u_2
+    ^ 4 * q_lc3 * w_32 + u_2
+    ^ 4 * q_hash0 * w_02 + u_2
+    ^ 4 * q_hash1 * w_12 + u_2
+    ^ 4 * q_hash2 * w_22 + u_2
+    ^ 4 * q_hash3 * w_32 + u_2
+    ^ 5 * q_c + u_2
+    ^ 5 * pub_input - u_2
+    ^ 4 * q_o * w_o2
+)
+
+w_03 = w_01 + r * w_02
+w_13 = w_11 + r * w_12
+w_23 = w_21 + r * w_22
+w_33 = w_31 + r * w_32
+w_o3 = w_o1 + r * w_o2
+u_3 = u_1 + r * u_2
+
+E_3 = (
+    q_ecc * w_03 * w_13 * w_23 * w_33 * w_o3 + u_3
+    ^ 3 * q_mul0 * w_03 * w_13 + u_3
+    ^ 3 * q_mul1 * w_23 * w_33 + u_3
+    ^ 4 * q_lc0 * w_03 + u_3
+    ^ 4 * q_lc1 * w_13 + u_3
+    ^ 4 * q_lc2 * w_23 + u_3
+    ^ 4 * q_lc3 * w_33 + u_3
+    ^ 4 * q_hash0 * w_03 + u_3
+    ^ 4 * q_hash1 * w_13 + u_3
+    ^ 4 * q_hash2 * w_23 + u_3
+    ^ 4 * q_hash3 * w_33 + u_3
+    ^ 5 * q_c + u_3
+    ^ 5 * pub_input - u_3
+    ^ 4 * q_o * w_o3
+)
+
+T = (E_3 - E_1 - r ^ 5 * E_2) / r
+
+show(T.expand())
