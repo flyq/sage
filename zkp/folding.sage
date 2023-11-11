@@ -172,11 +172,11 @@ E_1 = (
     ^ 4 * q_lc0 * w_01 + u_1
     ^ 4 * q_lc1 * w_11 + u_1
     ^ 4 * q_lc2 * w_21 + u_1
-    ^ 4 * q_lc3 * w_31 + u_1
-    ^ 4 * q_hash0 * w_01 + u_1
-    ^ 4 * q_hash1 * w_11 + u_1
-    ^ 4 * q_hash2 * w_21 + u_1
-    ^ 4 * q_hash3 * w_31 + u_1
+    ^ 4 * q_lc3 * w_31 + q_hash0 * w_01
+    ^ 5 + q_hash1 * w_11
+    ^ 5 + q_hash2 * w_21
+    ^ 5 + q_hash3 * w_31
+    ^ 5 + u_1
     ^ 5 * q_c + u_1
     ^ 5 * pub_input - u_1
     ^ 4 * q_o * w_o1
@@ -189,11 +189,11 @@ E_2 = (
     ^ 4 * q_lc0 * w_02 + u_2
     ^ 4 * q_lc1 * w_12 + u_2
     ^ 4 * q_lc2 * w_22 + u_2
-    ^ 4 * q_lc3 * w_32 + u_2
-    ^ 4 * q_hash0 * w_02 + u_2
-    ^ 4 * q_hash1 * w_12 + u_2
-    ^ 4 * q_hash2 * w_22 + u_2
-    ^ 4 * q_hash3 * w_32 + u_2
+    ^ 4 * q_lc3 * w_32 + q_hash0 * w_02
+    ^ 5 + q_hash1 * w_12
+    ^ 5 + q_hash2 * w_22
+    ^ 5 + q_hash3 * w_32
+    ^ 5 + u_2
     ^ 5 * q_c + u_2
     ^ 5 * pub_input - u_2
     ^ 4 * q_o * w_o2
@@ -213,11 +213,11 @@ E_3 = (
     ^ 4 * q_lc0 * w_03 + u_3
     ^ 4 * q_lc1 * w_13 + u_3
     ^ 4 * q_lc2 * w_23 + u_3
-    ^ 4 * q_lc3 * w_33 + u_3
-    ^ 4 * q_hash0 * w_03 + u_3
-    ^ 4 * q_hash1 * w_13 + u_3
-    ^ 4 * q_hash2 * w_23 + u_3
-    ^ 4 * q_hash3 * w_33 + u_3
+    ^ 4 * q_lc3 * w_33 + q_hash0 * w_03
+    ^ 5 + q_hash1 * w_13
+    ^ 5 + q_hash2 * w_23
+    ^ 5 + q_hash3 * w_33
+    ^ 5 + u_3
     ^ 5 * q_c + u_3
     ^ 5 * pub_input - u_3
     ^ 4 * q_o * w_o3
