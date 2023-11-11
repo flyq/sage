@@ -6,3 +6,5 @@ b = Fp(3)
 E = EllipticCurve(Fp, [a, b])
 Gx = Fp(1)
 Gy = Fp(2)
+
+show(E.order())
