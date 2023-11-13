@@ -125,7 +125,6 @@ show(T.expand())
 print("jellyfish")
 
 q_o = var("q_o")
-pub_input = var("pub_input")
 q_c = var("q_c")
 q_mul0 = var("q_mul0")
 q_mul1 = var("q_mul1")
@@ -177,8 +176,7 @@ E_1 = (
     ^ 5 + q_hash2 * w_21
     ^ 5 + q_hash3 * w_31
     ^ 5 + u_1
-    ^ 5 * q_c + u_1
-    ^ 5 * pub_input - u_1
+    ^ 5 * q_c - u_1
     ^ 4 * q_o * w_o1
 )
 
@@ -194,8 +192,7 @@ E_2 = (
     ^ 5 + q_hash2 * w_22
     ^ 5 + q_hash3 * w_32
     ^ 5 + u_2
-    ^ 5 * q_c + u_2
-    ^ 5 * pub_input - u_2
+    ^ 5 * q_c - u_2
     ^ 4 * q_o * w_o2
 )
 
@@ -218,8 +215,7 @@ E_3 = (
     ^ 5 + q_hash2 * w_23
     ^ 5 + q_hash3 * w_33
     ^ 5 + u_3
-    ^ 5 * q_c + u_3
-    ^ 5 * pub_input - u_3
+    ^ 5 * q_c - u_3
     ^ 4 * q_o * w_o3
 )
 
